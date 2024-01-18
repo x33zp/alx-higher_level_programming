@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import hidden_4
-    for names in hidden_4:
+
+    lists = dir(hidden_4)
+
+    for name in lists:
         if names[:2] != '__':
-            print(dir(hidden_4))
+            print(name)
