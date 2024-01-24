@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
 
     total = 0
     previous = 0
-    for roman in reversed(roman_string)
+    for roman in reversed(roman_string):
         current = roman_numerals[roman]
         if current < previous:
             total -= current
