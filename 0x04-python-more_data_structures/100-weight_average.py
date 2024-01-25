@@ -10,3 +10,4 @@ def weight_average(my_list=[]):
             last_int_sum += i[-1]
         result = total / last_int_sum
         return result
+    return 0
