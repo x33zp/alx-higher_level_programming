@@ -4,12 +4,14 @@
 
 class Rectangle:
     """A class that represents a rectangle"""
+
     def __init__(self, width=0, height=0):
         """
         Initialize a Rectangle instance.
 
         Args:
-            size (int): size of the square.
+            width: width of the rectangle.
+            height: height of the rectangle.
             Defaults to 0.
         """
         self.width = width
@@ -38,9 +40,9 @@ class Rectangle:
             ValueError: If width is less than 0.
         """
         if type(value) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         elif value < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -67,8 +69,8 @@ class Rectangle:
             ValueError: If height is less than 0.
         """
         if type(value) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("height must be an integer")
         elif value < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
