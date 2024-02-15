@@ -39,11 +39,11 @@ class Node:
         """
         Getter method for retrieving next_node.
         """
-        return self.__next_node 
+        return self.__next_node
 
-    @next_node.setter 
-    def next_node(self, value): 
-        """ 
+    @next_node.setter
+    def next_node(self, value):
+        """
         Setter method for setting next_node.
         """
         if not isinstance(value, Node) and value is not None:
