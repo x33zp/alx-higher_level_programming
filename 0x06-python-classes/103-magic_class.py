@@ -1,3 +1,6 @@
+import math
+
+
 class MagicClass:
     def__init__(self, radius=0):
         if not isinstance(radius, (int, float)):
