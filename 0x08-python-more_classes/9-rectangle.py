@@ -100,7 +100,8 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        return "\n".join([str(Rectangle.print_symbol) * self.width] * self.height)
+        return "\n".join([
+            str(Rectangle.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
@@ -115,12 +116,13 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        
+
         if rect_1.area() >= rect_2.area():
             return rect_1
         else:
             return rect_2
 
     @classmethod
+    """returns a new Rectangle instance"""
     def square(cls, size=0):
         return cls(size, size)
