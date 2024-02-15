@@ -11,19 +11,20 @@ class MagicClass:
         __radius (int or float): The radius of the magic circle.
     """
 
-    def__init__(self, radius=0):
+    def __init__(self, radius=0):
         """
         Initialize a MagicClass instance with a given radius.
 
         Args:
-            radius (int or float): The radius of the magic circle. Defaults to 0.
+            radius (int or float): The radius of the magic circle.
+            Defaults to 0.
 
         Raises:
             TypeError: If radius is not a number.
         """
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
-            raise TypeError("radius must be a number")
+            raise TypeError('radius must be a numberi)
         self.__radius = radius
 
     def area(self):
