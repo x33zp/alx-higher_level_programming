@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Define a MagicClass matching exactly a bytecode provided"""
-
-
 import math
 
 
@@ -23,7 +21,7 @@ class MagicClass:
         Raises:
             TypeError: If radius is not a number.
         """
-        if ot isinstance(radius, (int, float)):
+        if not isinstance(radius, (int, float)):
             TypeError("radius must be a number")
         self.__radius = radius
 
