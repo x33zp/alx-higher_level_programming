@@ -34,7 +34,7 @@ class Node:
             raise TypeError("data must be an integer")
         self.__data = value
 
-    @property 
+    @property
     def next_node(self):
         """
         Getter method for retrieving next_node.
