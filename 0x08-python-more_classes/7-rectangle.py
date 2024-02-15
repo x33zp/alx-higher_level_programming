@@ -100,7 +100,10 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        return "\n".join([str(Rectangle.print_symbol) * self.width] * self.height)
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
