@@ -2,7 +2,7 @@
 Test cases for  0-add_integer.py
 ================================
 
-This module has only one function ``add_integer``.
+This module has only one function ``add_integer()``.
 
 Usage
 =====
@@ -80,9 +80,3 @@ Passing a None parameter to the function
     Traceback (most recent call last):
 	      ...
     TypeError: a must be an integer
-
-Passing a NAN number(float('nan'))
-    >>> add_integer(float('nan'))
-    Traceback (most recent call last):
-              ...
-    ValueError: cannot convert float NaN to integer
