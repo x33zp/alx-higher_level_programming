@@ -2,49 +2,27 @@
 Test cases for  2-matrix_divided.py
 ===================================
 
-This module has only one function ``matrix_divided``.
+This module has only one function ``matrix_divided(matrix, div)``.
 
 Usage
 =====
-``matrix_divided()``` returns the addition of it's two arguments. For numbers,
-that value is equivalent to using the ``+`` operator.
+``matrix_divided()`` returns a new matrix with all elements divided by ``div``.
 
 
-Importing function from the module::
-    >>> add_integer = __import__('0-add_integer').add_integer
+Importing function from the module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-Adding two positive integers (a = 2, b = 3).
-    >>> add_integer(2, 3)
-    5
+Test with valid matrix and divisor
+    >>> matrix = [[1,2,3], [4,5,6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
-Adding one positive and one negative integer (a = 2, b = -3).
-    >>> add_integer(2, -3)
-    -1
+Test with a matrix containing floats
+    >>> matrix = [[1.0, 2.0], [3.0, 4.0]]
+    >>> matrix_divided(matrix, 2)
+    [[0.5, 1.0], [1.5, 2.0]]
 
-Adding two negative integers (a = -2, b = -3).
-    >>> add_integer(-2, -3)
-    -5
-
-Adding two floats (a = 2.1, b = 3.5).
-    >>> add_integer(2.1, 3.5)
-    5
-
-Adding one integer and one float (a = 2, b = 8.3).
-    >>> add_integer(2, 3.5)
-    5
-
-Adding one integer to the second parameter which default to 98 (a = 2, b = 98)
-    >>> add_integer(2)
-    100
-
-Adding two strings (a = '2', b = '3').
-    >>> add_integer('2', '3')
-    Traceback (most recent call last):
-	      ...
-    TypeError: a must be an integer
-
-Adding one string and one integer (a = 2, b = '3')
-    >>> add_integer(2, '3')
-    Traceback (most recent call last):
-              ...
-    TypeError: b must be an integer
+Test with matrix contaning negative integers
+    >>> matrix = [[-1,-2,-3], [-4,-5,-6]]
+    >>> matrix_divided(matrix, 3)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
