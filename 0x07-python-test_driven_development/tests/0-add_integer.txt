@@ -37,8 +37,12 @@ Adding one integer to the second parameter which default to 98 (a = 2, b = 98)
     >>> add_integer(2)
     100
 
-Adding two strings (a = '2', b = '3').
-    >>> add_integer('2', '3')
+Adding negative float and negative integer (a = -2.5, b = -7)
+    >>> add_integer(-2.5, -7)
+    -9
+
+Adding two strings (a = "Hello", b = "School").
+    >>> add_integer("Hello", 'School')
     Traceback (most recent call last):
 	      ...
     TypeError: a must be an integer
