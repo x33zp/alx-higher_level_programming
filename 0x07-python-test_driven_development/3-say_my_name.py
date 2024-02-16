@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""contains function that prints a name"""
+
+
 def say_my_name(first_name, last_name=""):
     """a function that prints My name is <first name> <last name>"""
 
