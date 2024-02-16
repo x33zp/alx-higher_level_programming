@@ -6,8 +6,9 @@ This module has only one function ``add_integer``.
 
 Usage
 =====
-``add_integer()``` returns the addition of it's two arguments. For numbers,
-that value is equivalent to using the ``+`` operator.
+``add_integer()`` returns the addition of it's two parameters. For numbers,
+that value is equivalent to using the ``+`` operator, both parameters must either be
+an integer or a float.
 
 Importing function from the module:
     >>> add_integer = __import__('0-add_integer').add_integer
@@ -74,8 +75,14 @@ Adding one integer and one string (a = 2, b = "School")
               ...
     TypeError: b must be an integer
 
-Passing a None argument to the function
+Passing a None parameter to the function
     >>> add_integer(None)
     Traceback (most recent call last):
 	      ...
     TypeError: a must be an integer
+
+Passing a NAN number(float('nan'))
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+              ...
+    ValueError: cannot convert float NaN to integer
