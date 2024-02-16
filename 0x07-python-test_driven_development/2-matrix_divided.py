@@ -8,17 +8,17 @@ def matrix_divided(matrix, div):
 
     Args:
         matrix (list of lists): The matrix to be divided.
-                                Each row should be a list of integers or floats.
+            Each row should be a list of integers or floats.
         div (int or float): The divisor.
 
     Returns:
         list of lists: A new matrix where each element is the result of
-                       dividing the corresponding element of the original matrix by div.
-                       All elements are rounded to 2 decimal places.
+            dividing the corresponding element of the original matrix by div.
+            All elements are rounded to 2 decimal places.
 
     Raises:
-        TypeError: If matrix is not a list of lists containing only integers or floats,
-                   or if div is not a number.
+        TypeError: If matrix is not a list of lists containing
+            only integers or floats, or if div is not a number.
         ZeroDivisionError: If div is equal to zero.
     """
     if not isinstance(matrix, list) or not all(
@@ -35,4 +35,4 @@ def matrix_divided(matrix, div):
     elif div == 0:
         raise ZeroDivisionError("division by zero")
 
-    return list(map(lambda row: list(map(lambda x: round(x / div, 2), row)), matrix))
+    return [list(map(lambda x: round(x / div, 2), row)) for row in matrix]
