@@ -18,7 +18,7 @@ def text_indentation(text):
             if char == ' ':
                 continue
             else:
-                charID= 1
+                charID = 1
 
         if charID == 1:
             if char in punc:
