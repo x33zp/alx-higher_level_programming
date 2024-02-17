@@ -34,7 +34,6 @@ Test with a large integer
 
 Test with valid input ``0`` prints nothing
     >>> print_square(0)
-    <BLANKLINE>
 
 Test with invalid input, negative integer
     >>> print_square(-8)
