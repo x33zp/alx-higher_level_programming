@@ -17,7 +17,7 @@ def text_indentation(text):
                 continue
             else:
                 charID = 1
-        elif charID == 1:
+        if charID == 1:
             if char == ':' or char == '.' or char == '?':
                 print(char)
                 print()
