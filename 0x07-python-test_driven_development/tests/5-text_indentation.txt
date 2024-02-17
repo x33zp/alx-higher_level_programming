@@ -1,0 +1,41 @@
+=================================
+Test cases for 5-text_indentation
+=================================
+
+This module has only one function ``text_indentation(text)``.
+
+Usage
+=====
+``text_indentation(...)`` prints text  with 2 new lines after each of these characters:
+``.``, ``?`` and ``:``.
+
+Importing function from the module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test with one sentence
+    >>> text_indentation("Hello. How are you?")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+
+Test with multiple sentences
+    >>> text_indentation("Hello. How are you? I'm fine, thank you.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I'm fine, thank you.
+    <BLANKLINE>
+
+Test with no argument
+    >>>  text_indentation()
+    Traceback (most recent call last):
+              ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test with integer argument
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+              ...
+    TypeError: text must be a string
