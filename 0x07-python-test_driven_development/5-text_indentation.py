@@ -14,7 +14,7 @@ def text_indentation(text):
     count = 0
     for ch in text:
         if count == 0:
-            if char == ' ':
+            if ch == ' ':
                 continue
             else:
                 count = 1
