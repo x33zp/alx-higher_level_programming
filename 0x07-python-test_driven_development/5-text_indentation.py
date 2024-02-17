@@ -5,9 +5,9 @@ Indents text
 
 
 def text_indentation(text):
-    """prints text with 2 new lines after each of these characters: ., ? and :"""
+    """prints text with 2 new lines after: '.', '?' and ':'"""
     if type(text) is not str:
-        raise TypeError("text must be a string")u
+        raise TypeError("text must be a string")
 
     charID = 0
     for char in text:
