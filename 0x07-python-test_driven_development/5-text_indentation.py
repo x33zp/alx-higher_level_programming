@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""Indents text"""
+"""
+Indents text
+"""
 
 
 def text_indentation(text):
-    """
-    a function that prints a text with 2 new lines
-    after each of these characters: ., ? and :
-    """
+    """prints text with 2 new lines after each of these characters: ., ? and :"""
     if type(text) is not str:
-        raise TypeError("text must be a string")
+        raise TypeError("text must be a string")u
 
     charID = 0
     for char in text:
