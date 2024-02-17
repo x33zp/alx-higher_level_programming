@@ -29,7 +29,7 @@ Test with multiple sentences
     <BLANKLINE>
 
 Test with no argument
-    >>>  text_indentation()
+    >>> text_indentation()
     Traceback (most recent call last):
               ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
@@ -39,3 +39,18 @@ Test with integer argument
     Traceback (most recent call last):
               ...
     TypeError: text must be a string
+
+Test with passing multiple string arguments
+    >>> text_indentation('Hello', 'There', 'How are you')
+    Traceback (most recent call last):
+              ...
+    TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+Test with leading and trailing
+    >>> text_indentation("   Hello. How are you? I'm fine, thank you.   ")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I'm fine, thank you.
+    <BLANKLINE>
