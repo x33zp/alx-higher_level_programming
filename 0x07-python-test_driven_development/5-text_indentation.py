@@ -11,18 +11,19 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     punc = {'.', ':', '?'}
-    lines = []
-    current_line = ""
 
+    charID = 0
     for char in text:
-        current_line += char
-        if char in punc:
-            lines.append(current_line.strip())
-            current_line = ""
+        if charID == 0:
+            if char == ' ':
+                continue
+            else:
+                charID= 1
 
-    for line in lines:
-        print(line)
-        print()
-
-    if current_line:
-        print(current_line.strip())
+        if charID == 1:
+            if char in punc:
+                print(char)
+                print()
+                breakP = 0
+            else:
+                print(char, end="")
