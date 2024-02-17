@@ -6,8 +6,8 @@ indents a string passed to it
 
 def text_indentation(text):
     """
-    a function that prints a text with 2 new lines after each of these characters:
-    '.', '?' and ':'
+    a function that prints a text with 2 new lines
+    after each of these characters: '.', '?' and ':'
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
