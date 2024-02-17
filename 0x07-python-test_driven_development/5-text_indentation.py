@@ -7,7 +7,7 @@ def text_indentation(text):
     a function that prints a text with 2 new lines
     after each of these characters: ., ? and :
     """
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
     charID = 0
@@ -17,8 +17,7 @@ def text_indentation(text):
                 continue
             else:
                 charID = 1
-
-        if charID == 1:
+        elif charID == 1:
             if char == ':' or char == '.' or char == '?':
                 print(char)
                 print()
