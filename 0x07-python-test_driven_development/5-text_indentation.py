@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
-Indents text
+Supplies a function that indents text
 """
 
 
 def text_indentation(text):
-    """prints text with 2 new lines after: '.', '?' and ':'"""
+    """
+    prints a text with 2 new lines after each of these characters: '.', '?' and ':'
+    """
     if type(text) is not str:
         raise TypeError("text must be a string")
     charID = 0
@@ -16,9 +18,9 @@ def text_indentation(text):
             else:
                 charID = 1
         if charID == 1:
-            if char == ':' or char == '.' or char == '?':
+            if char == '?' or char == '.' or char == ':':
                 print(char)
                 print()
-                breakP = 0
+                flag = 0
             else:
                 print(char, end="")
