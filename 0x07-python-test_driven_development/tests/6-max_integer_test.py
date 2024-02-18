@@ -36,7 +36,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_string_list(self):
         """Test for strings in list"""
-        self.assertEqual(max_integer(["hello", "hi", "there"]), 'there', "it returns the string with the max ASCII value")
+        self.assertEqual(max_integer(["hello", "hi", "there"]), 'there')
 
     def test_string_int(self):
         """Test for string and integers in list"""
