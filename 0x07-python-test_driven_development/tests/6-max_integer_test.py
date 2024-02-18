@@ -22,9 +22,17 @@ class TestMaxInteger(unittest.TestCase):
         """Test for unordered list"""
         self.assertEqual(max_integer([1, 3, 4, 2]), 4)
 
+    def test_max_beginning(self):
+        """Test for max int at beginning of list"""
+        self.assertEqual(max_integer([70, 12, 8, 5]), 70)
+
     def test_negative_integers(self):
         """Test for list with negative integers"""
         self.assertEqual(max_integer([-4, -8, -1, -6]), -1)
+
+    def test_floats(self):
+        """Test for list of floats."""
+        self.assertEqual(max_integer([1.53, 6.33, -9.123, 15.2, 6.0]), 15.2)
 
     def test_mixed_integers(self):
         """Test for list with mixed integers"""
@@ -33,6 +41,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_one_integers(self):
         """Test for one number in the list"""
         self.assertEqual(max_integer([9]), 9)
+
+    def test_string(self):
+        """Test a string."""
+        self.assertEqual(max_integer("hello"), 'o')
 
     def test_string_list(self):
         """Test for strings in list"""
