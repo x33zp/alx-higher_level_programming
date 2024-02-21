@@ -13,7 +13,7 @@ def from_json_string(my_str):
         my_str (str): The JSON string to be converted into a Python object.
 
     Returns:
-        any: The Python object representation of the input JSON string `my_str`.
+        The Python object representation of the input JSON string `my_str`.
 
     Note:
         This function internally uses the `json.loads()` function from the
