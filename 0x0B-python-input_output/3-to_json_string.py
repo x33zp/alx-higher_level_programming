@@ -19,4 +19,4 @@ def to_json_string(my_obj):
         This function internally uses the `json.dumps()` function from the
         `json` module to perform the conversion.
     """
-    json.dumps(my_obj)
+    return json.dumps(my_obj)
