@@ -8,12 +8,14 @@ class MyInt(int):
     """
     A class representing a rebellious integer.
 
-    This class inherits from int but inverts the behavior of the equality and inequality operators.
+    This class inherits from int but inverts the behavior of the equality
+    and inequality operators.
     """
 
     def __eq__(self, other):
         """
-        Overrides the equality operator (==) to return the inverse of the int's equality check.
+        Overrides the equality operator (==) to return the inverse of the
+        int's equality check.
 
         Parameters:
             other (Any): The value to compare with.
@@ -25,7 +27,8 @@ class MyInt(int):
 
     def __ne__(self, other):
         """
-        Overrides the inequality operator (!=) to return the inverse of the int's inequality check.
+        Overrides the inequality operator (!=) to return the inverse of the
+        int's inequality check.
 
         Parameters:
             other (Any): The value to compare with.
