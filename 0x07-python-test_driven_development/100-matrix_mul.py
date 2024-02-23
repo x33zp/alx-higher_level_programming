@@ -3,6 +3,7 @@
 Contains function matrix_mul
 """
 
+
 def matrix_mul(m_a, m_b):
     """
     Multiplies two matrices.
@@ -22,12 +23,12 @@ def matrix_mul(m_a, m_b):
                        Each sublist represents a row.
 
     Raises:
-        TypeError: If m_a or m_b is not a list or not a list of lists,
-                   or if any element in the matrices is not an integer or float,
-                   or if any row in the matrices is not of the same size.
-        ValueError: If m_a or m_b is empty,
-                    or if the matrices cannot be multiplied due to incompatible sizes.
-
+        TypeError: If m_a or m_b is not a list or not a list of
+                   lists, or if any element in the matrices is not
+                   an integer or float, or if any row in the matrices
+                   is not of the same size.
+        ValueError: If m_a or m_b is empty, or if the matrices cannot be
+                    multiplied due to incompatible sizes.
     """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
@@ -35,7 +36,7 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list")
     if not all(isinstance(row, list) for row in m_a):
         raise TypeError("m_a must be a list of lists")
-    if not all(isinstance(row, list) for row in m_b): 
+    if not all(isinstance(row, list) for row in m_b):
         raise TypeError("m_b must be a list of lists")
     if not m_a or not all(row for row in m_a):
         raise ValueError("m_a can't be empty")
