@@ -1,10 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/pytihon3
 """
 This script defines the Base class, which serves as the base
 for other classes in the project.
 """
 
 import json
+import os
 
 
 class Base:
@@ -70,3 +71,15 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        returns a list of instances
+        """
+        filename = cls.__name__ + '.json'
+        if os.path.exists(filename):
+            with open(filename, 'r') as file:
+                dict_list = cls.from_json_string(file.read())
+                return [cls.create(**dictionary) for dictionary in dict_list]
+        return []
