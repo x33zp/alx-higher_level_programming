@@ -129,10 +129,13 @@ class Rectangle(Base):
 
     def display(self):
         """
-        Display the rectangle using '#' characters.
+        Display the rectangle using '#' characters,
+        considering the x and y coordinates.
         """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print('#' * self.__width)
+            print(' ' * self.__x + '#' * self.__width)
 
     def __str__(self):
         """
