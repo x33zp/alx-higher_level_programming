@@ -5,7 +5,7 @@ for other classes in the project.
 """
 
 import json
-
+from models.rectangle import Rectangle
 
 class Base:
     """
@@ -27,10 +27,11 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """
         Return a json representation of the parameter
         """
-        if not len(list_dictionaries) or list_dictionaries is None:
+        if list_dictionaries == [] or list_dictionaries is None:
             return []
         return json.dumps(list_dictionaries)
