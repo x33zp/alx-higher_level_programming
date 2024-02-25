@@ -19,7 +19,7 @@ class Base:
         Initializes a new instance of the Base class.
 
         Parameters:
-            - id (int): Optional. The id to assign to the instance.
+            id: Optional. The id to assign to the instance.
             If None, a new id is generated.
         """
         if id is not None:
@@ -31,7 +31,13 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        Return a json representation of the parameter
+        Convert a list of dictionaries to a JSON string.
+
+        Parameters:
+           list_dictionaries (list): A list of dictionaries.
+
+        Returns:
+           str: JSON string representation of list_dictionaries.
         """
         if list_dictionaries == [] or list_dictionaries is None:
             return []
@@ -40,7 +46,15 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        Writes the JSON string representation of list_objs to a file
+         Write the JSON string representation of list_objs to
+         a file.
+
+        Parameters:
+            list_objs (list): A list of instances that inherit
+            from Base.
+
+        Returns:
+            Empty list if list_objs is None
         """
         filename = cls.__name__ + '.json'
         with open(filename, 'w') as jsonfile:
@@ -53,7 +67,14 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
-        Returns the list of the JSON string representation
+        Convert a JSON string to a list of dictionaries.
+
+        Parameters:
+            json_string (str): A string representing a list of
+            dictionaries in JSON format.
+
+        Returns:
+            list: List of dictionaries represented by json_string.
         """
         if json_string is None or json_string == []:
             return []
@@ -62,7 +83,16 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        Returns an instance with all attributes already set
+        Create an instance with attributes set based on the provided
+        dictionary.
+
+        Parameters:
+          **dictionary (dict): A dictionary containing attribute names
+          and values.
+
+        Returns:
+            instance: An instance of the class with attributes set based
+            on the dictionary.
         """
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
@@ -75,7 +105,10 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        returns a list of instances
+        Load instances from a JSON file and return a list of instances.
+
+        Returns:
+            list: List of instances loaded from the file.
         """
         filename = cls.__name__ + '.json'
         if os.path.exists(filename):
