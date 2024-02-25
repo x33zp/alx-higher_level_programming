@@ -118,7 +118,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-    def area(self): 
+    def area(self):
         """
         Calculate the area of the rectangle.
 
@@ -129,7 +129,19 @@ class Rectangle(Base):
 
     def display(self):
         """
-
+        Display the rectangle using '#' characters.
         """
         for i in range(self.__height):
             print('#' * self.__width)
+
+    def __str__(self):
+        """
+        Returns the string representation of the rectangle.
+
+        Format:
+            [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return '[{}] ({}) {}/{} - {}/{}'.format(type(self).__name__,
+                                                self.id, self.__x,
+                                                self.__y, self.__width,
+                                                self.__height)
