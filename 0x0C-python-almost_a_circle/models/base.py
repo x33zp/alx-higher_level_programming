@@ -29,7 +29,7 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """
-        
+        Return a json representation of the parameter
         """
         if not len(list_dictionaries) or list_dictionaries is None:
             return []
