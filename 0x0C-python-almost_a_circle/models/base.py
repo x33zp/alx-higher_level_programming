@@ -5,7 +5,7 @@ for other classes in the project.
 """
 
 import json
-from models.rectangle import Rectangle
+
 
 class Base:
     """
@@ -35,3 +35,16 @@ class Base:
         if list_dictionaries == [] or list_dictionaries is None:
             return []
         return json.dumps(list_dictionaries)
+
+    @classmethod 
+    def save_to_file(cls, list_objs):
+        """
+        Writes the JSON string representation of list_objs to a file
+        """
+        filename = cls.__name__ + '.json'
+        with open(filename, 'w') as jsonfile:
+            if list_objs == None:
+                jsonfile.write('[]')
+            else:
+                obj_dicts = [i.to_dictionary() for i in list_objs]
+                jsonfile.write(Base.to_json_string(obj_dicts))
