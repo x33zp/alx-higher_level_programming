@@ -149,9 +149,9 @@ class Rectangle(Base):
                                                 self.__y, self.__width,
                                                 self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
-        Update the attributes of the rectangle using the provided arguments.
+        Assigns an argument to each attribute.
 
         Parameters:
             args: The arguments to assign to the attributes in the order
