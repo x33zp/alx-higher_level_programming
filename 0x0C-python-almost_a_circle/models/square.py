@@ -23,3 +23,18 @@ class Square(Rectangle):
             id: Optional. The id to assign to the square (default None).
         """
         super().__init__(size, size, x, y, id)
+
+    @property
+    def size(self):
+        """
+        
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        
+        """
+        self.width = value
+        self.height = value
