@@ -48,3 +48,12 @@ class Base:
             else:
                 obj_dicts = [i.to_dictionary() for i in list_objs]
                 jsonfile.write(Base.to_json_string(obj_dicts))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of the JSON string representation
+        """
+        if json_string is None or json_string == []:
+            return []
+        return json.loads(json_string)
