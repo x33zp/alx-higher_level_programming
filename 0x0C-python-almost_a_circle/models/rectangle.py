@@ -16,13 +16,13 @@ class Rectangle(Base):
          x, y, and id.
 
         Parameters:
-        - width: The width of the rectangle.
-        - height: The height of the rectangle.
-        - x: The x-coordinate of the top-left corner
-        of the rectangle (default 0).
-        - y: The y-coordinate of the top-left corner
-        of the rectangle (default 0).
-        - id: Optional. (default None).
+            width: The width of the rectangle.
+            height: The height of the rectangle.
+            x: The x-coordinate of the top-left corner
+            of the rectangle (default 0).
+            y: The y-coordinate of the top-left corner
+            of the rectangle (default 0).
+            id: Optional. (default None).
         """
         super().__init__(id)
         self.width = width
@@ -102,7 +102,7 @@ class Rectangle(Base):
         Getter method for the y attribute.
         """
         return self.__y
-	
+
     @y.setter
     def y(self, value):
         """
