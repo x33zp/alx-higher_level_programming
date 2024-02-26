@@ -1,4 +1,4 @@
-#!/usr/bin/pytihon3
+#!/usr/bin/python3
 """
 This script defines the Base class, which serves as the base
 for other classes in the project.
