@@ -1,4 +1,18 @@
 #!/usr/bin/python3
+"""
+Test module for the models package.
+
+This module contains unit tests for the classes and functionalities
+defined in the models package, including the Base, Rectangle, and
+Square classes.
+
+The tests cover initialization, attribute manipulation, serialization,
+deserialization, file saving/loading, and other functionalities
+provided by the classes.
+
+Author: Zubby Peculiar
+"""
+
 from models.base import Base
 import unittest
 import json
