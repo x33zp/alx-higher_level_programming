@@ -40,7 +40,7 @@ class Base:
            str: JSON string representation of list_dictionaries.
         """
         if list_dictionaries == [] or list_dictionaries is None:
-            return []
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
