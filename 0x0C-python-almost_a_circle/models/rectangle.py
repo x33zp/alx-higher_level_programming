@@ -91,7 +91,7 @@ class Rectangle(Base):
             ValueError: If the value is less than 0.
         """
         if type(value) is not int:
-            raise TypeError("x must be an integer.")
+            raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
@@ -102,7 +102,7 @@ class Rectangle(Base):
         Getter method for the y attribute.
         """
         return self.__y
-
+	
     @y.setter
     def y(self, value):
         """
@@ -113,7 +113,7 @@ class Rectangle(Base):
             ValueError: If the value is less than 0.
         """
         if type(value) is not int:
-            raise TypeError("y must be an integer.")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
