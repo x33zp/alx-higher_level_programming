@@ -133,7 +133,7 @@ class TestBase_load_json(unittest.TestCase):
         sqr = [Square(5)]
         Square.save_to_file(sqr)
         sqr_str = Square.load_from_file()
-        self.assertEqual(str(sqr_str[0]), "[Square] (5) 0/0 - 5")        
+        self.assertEqual(str(sqr_str[0]), "[Square] (5) 0/0 - 5")
 
 
 class TestBase_create(unittest.TestCase):
@@ -194,6 +194,7 @@ class Testbase_save_to_csv(unittest.TestCase):
         with open("Square.csv", 'r') as file:
             self.assertEqual('11,5,0,0\n12,7,9,1\n', file.read())
 
+
 class Testbase_load_from_csv(unittest.TestCase):
     """
     Test cases for the load_from_file_csv methods.
@@ -203,8 +204,10 @@ class Testbase_load_from_csv(unittest.TestCase):
         Test loading rectangle instances from CSV file.
         """
         list_rectangles_output = Rectangle.load_from_file_csv()
-        self.assertEqual(str(list_rectangles_output[0]), "[Rectangle] (9) 2/8 - 10/7")
-        self.assertEqual(str(list_rectangles_output[1]), "[Rectangle] (10) 0/0 - 2/4")
+        self.assertEqual(str(list_rectangles_output[0]),
+                         "[Rectangle] (9) 2/8 - 10/7")
+        self.assertEqual(str(list_rectangles_output[1]),
+                         "[Rectangle] (10) 0/0 - 2/4")
 
     def test_load_from_csv_rectangle(self):
         """
