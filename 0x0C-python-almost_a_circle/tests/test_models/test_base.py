@@ -68,15 +68,6 @@ class TestBase(unittest.TestCase):
         """
         self.assertEqual(Base.to_json_string([]), "[]")
 
-    def test_save_to_file_none(self):
-        """
-        Test Base class method save_to_file with None input
-        """
-        Base.save_to_file(None)
-        self.assertTrue(os.path.exists)
-        with open("Base.json", 'r') as file:
-            self.assertEqual(file.read(), '[]')
-
     def test_save_to_file(self):
         """
         Test Base class method save_to_file with a valid input.
@@ -87,6 +78,15 @@ class TestBase(unittest.TestCase):
         with open("Base.json", 'r') as file:
             self.assertEqual(file.read(),
                              '[{"id": 2, "x": 0, "size": 5, "y": 0}]')
+
+    def test_save_to_file_none(self):
+        """
+        Test Base class method save_to_file with None input
+        """
+        Base.save_to_file(None)
+        self.assertTrue(os.path.exists)
+        with open("Base.json", 'r') as file:
+            self.assertEqual(file.read(), '[]')
 
     def test_from_json_string_none(self):
         """
@@ -111,6 +111,31 @@ class TestBase(unittest.TestCase):
         self.assertTrue(type(dictionary) is list)
 
 
+class TestBase_load_json(unittest.TestCase):
+    """
+    Unittes for load from Json file
+    """
+    def test_load_from_file_nonexistent(self):
+        """
+        Test Base class method load_from_file with a nonexistent file.
+        """
+        try:
+            os.remove("Square.json")
+        except IOError:
+            pass
+        empty_output = Square.load_from_file
+        self.assertEqual(empty_output, [])
+
+    def test_load_from_file_valid(self):
+        """
+        Test Base class method load_from_file with a valid file.
+        """
+        sqr = [Square(5)]
+        Square.save_to_file(sqr)
+        sqr_str = Square.load_from_file()
+        self.assertEqual(str(sqr_str[0]), "[Square] (5) 0/0 - 5")        
+
+
 class TestBase_create(unittest.TestCase):
     """
     Unittest for the create method
@@ -124,6 +149,20 @@ class TestBase_create(unittest.TestCase):
         rect_inst = Rectangle.create(**rect_dict)
         self.assertEqual(str(rect_inst), "[Rectangle] (17) 1/0 - 3/5")
 
+    def test_create_square(self):
+        """
+        Test Base class method create for creating a square instance.
+        """
+        sqr_dict = {'size': 5, 'x': 2, 'y': 1, 'id': '18'}
+        sqr_inst = Square.create(**sqr_dict)
+        self.assertEqual(str(sqr_inst), "[Square] (18) 2/1 - 5")
+
+
+# class TestBase_csv(unittest.Testcase):
+   # """
+    # Unittest for the save to and loading from csv
+    # """
+    # def test_save_to_csv():
 
 if __name__ == '__main__':
     unittest.main()
