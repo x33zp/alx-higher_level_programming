@@ -100,6 +100,30 @@ class TestBase(unittest.TestCase):
         """
         self.assertEqual(Base.from_json_string([]), [])
 
+    def from_json_string(self):
+        """
+        Test Base class method from_json_string with a valid string.
+        """
+        json_dict = '[{"id": 1, "size": 5, "x": 2, "y": 8}]'
+        dictionary = Base.from_json_string(json_dict)
+        self.assertEqual(dictionary,
+                         [{'id': 1, 'size': 5, 'x': 2, 'y': 8}])
+        self.assertTrue(type(dictionary) is list)
+
+
+class TestBase_create(unittest.TestCase):
+    """
+    Unittest for the create method
+    """
+
+    def test_create_rectangle(self):
+        """
+        Test Base class method create for creating a rectangle instance.
+        """
+        rect_dict = {'width': 3, 'height': 5, 'x': 1, 'y': 0, 'id': '17'}
+        rect_inst = Rectangle.create(**rect_dict)
+        self.assertEqual(str(rect_inst), "[Rectangle] (17) 1/0 - 3/5")
+
 
 if __name__ == '__main__':
     unittest.main()
