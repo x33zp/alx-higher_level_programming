@@ -123,7 +123,7 @@ class TestBase_load_json(unittest.TestCase):
             os.remove("Square.json")
         except IOError:
             pass
-        empty_output = Square.load_from_file
+        empty_output = Square.load_from_file()
         self.assertEqual(empty_output, [])
 
     def test_load_from_file_valid(self):
