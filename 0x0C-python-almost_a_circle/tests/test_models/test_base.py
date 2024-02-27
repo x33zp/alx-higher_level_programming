@@ -88,13 +88,13 @@ class TestBase(unittest.TestCase):
             self.assertEqual(file.read(),
                              '[{"id": 2, "x": 0, "size": 5, "y": 0}]')
 
-    def test_from_json_string_none():
+    def test_from_json_string_none(self):
         """
         Test Base class method from_json_string with None input.
         """
         self.assertEqual(Base.from_json_string(None), [])
 
-    def test_from_json_string_empty_list():
+    def test_from_json_string_empty_list(self):
         """
         Test Base class method from_json_string with an empty list.
         """
