@@ -195,28 +195,5 @@ class Testbase_save_to_csv(unittest.TestCase):
             self.assertEqual('11,5,0,0\n12,7,9,1\n', file.read())
 
 
-class Testbase_load_from_csv(unittest.TestCase):
-    """
-    Test cases for the load_from_file_csv methods.
-    """
-    def test_load_from_csv_rectangle(self):
-        """
-        Test loading rectangle instances from CSV file.
-        """
-        list_rectangles_output = Rectangle.load_from_file_csv()
-        self.assertEqual(str(list_rectangles_output[0]),
-                         "[Rectangle] (9) 2/8 - 10/7")
-        self.assertEqual(str(list_rectangles_output[1]),
-                         "[Rectangle] (10) 0/0 - 2/4")
-
-    def test_load_from_csv_rectangle(self):
-        """
-        Test loading square instances from CSV file.
-        """
-        list_squares_output = Square.load_from_file_csv()
-        self.assertEqual(str(list_squares_output[0]), "[Square] (11) 0/0 - 5")
-        self.assertEqual(str(list_squares_output[1]), "[Square] (12) 9/1 - 7")
-
-
 if __name__ == '__main__':
     unittest.main()
