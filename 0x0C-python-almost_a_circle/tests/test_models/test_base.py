@@ -13,10 +13,12 @@ provided by the classes.
 Author: Zubby Peculiar
 """
 
-from models.base import Base
 import unittest
 import json
 import os
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -39,15 +41,16 @@ class TestBase(unittest.TestCase):
 
     def test_init_with_two_args(self):
         """
+        Test initialization of Base class with 2 arguments
+        """
         with self.assertRaises(TypeError):
             base2_3 = Base(2, 3)
-        """
 
     def test_to_json_string(self):
         """
-        Test Base class method to_json_string with an empty list.
+        Test Base class method to_json_string valid.
         """
-        dictionary = {'id': 1, 'size': 10, 'x': 2, 'y': 8}
+        dictionary = {'id': 1, 'size': 5, 'x': 2, 'y': 8}
         json_dict = Base.to_json_string([dictionary])
         self.assertEqual(json_dict,
                          '[{"id": 1, "size": 5, "x": 2, "y": 8}]')
@@ -61,10 +64,30 @@ class TestBase(unittest.TestCase):
 
     def test_to_json_string_empty_list(self):
         """
-
+        Test Base class method to_json_string with an empty list.
         """
-        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
 
+    def test_save_to_file_none(self):
+        """
+        Test Base class method save_to_file with None input
+        """
+        Base.save_to_file(None)
+        self.assertTrue(os.path.exists)
+        with open("Base.json", 'r') as file:
+            self.assertEqual(file.read(), '[]')
+
+    def test_save_to_file(self):
+        """
+        Test Base class method save_to_file with a valid input.
+        """
+        s1 = Square(5)
+        Base.save_to_file([s1])
+        self.assertTrue(os.path.exists("Base.json"))
+        with open("Base.json", 'r') as file:
+            self.assertEqual(file.read(), '[{"id": 2, "x": 0, "size": 5, "y": 0}]')
+
+    def test_from_json_string_none()
 
 if __name__ == '__main__':
     unittest.main()
