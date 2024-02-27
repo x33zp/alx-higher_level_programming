@@ -158,9 +158,9 @@ class TestBase_create(unittest.TestCase):
         self.assertEqual(str(sqr_inst), "[Square] (18) 2/1 - 5")
 
 
-class Testbase_csv(unittest.TestCase):
+class Testbase_save_to_csv(unittest.TestCase):
     """
-    Test cases for the save_to_file_csv and load_from_file_csv methods.
+    Test cases for the save_to_file_csv methods.
     """
     def test_save_to_csv_rectangle(self):
         """
@@ -176,7 +176,7 @@ class Testbase_csv(unittest.TestCase):
         list_rectangles_input = [rect1, rect2]
         Rectangle.save_to_file_csv(list_rectangles_input)
         with open("Rectangle.csv", 'r') as file:
-            self.assertEqual('7,10,7,2,8\n8,2,4,0,0\n', file.read())
+            self.assertEqual('9,10,7,2,8\n10,2,4,0,0\n', file.read())
 
     def test_save_to_csv_square(self):
         """
@@ -192,7 +192,27 @@ class Testbase_csv(unittest.TestCase):
         list_squares_input = [sqr1, sqr2]
         Square.save_to_file_csv(list_squares_input)
         with open("Square.csv", 'r') as file:
-            self.assertEqual('9,5,0,0\n10,7,9,1\n', file.read())
+            self.assertEqual('11,5,0,0\n12,7,9,1\n', file.read())
+
+class Testbase_load_from_csv(unittest.TestCase):
+    """
+    Test cases for the load_from_file_csv methods.
+    """
+    def test_load_from_csv_rectangle(self):
+        """
+        Test loading rectangle instances from CSV file.
+        """
+        list_rectangles_output = Rectangle.load_from_file_csv()
+        self.assertEqual(str(list_rectangles_output[0]), "[Rectangle] (9) 2/8 - 10/7")
+        self.assertEqual(str(list_rectangles_output[1]), "[Rectangle] (10) 0/0 - 2/4")
+
+    def test_load_from_csv_rectangle(self):
+        """
+        Test loading square instances from CSV file.
+        """
+        list_squares_output = Square.load_from_file_csv()
+        self.assertEqual(str(list_squares_output[0]), "[Square] (11) 0/0 - 5")
+        self.assertEqual(str(list_squares_output[1]), "[Square] (12) 9/1 - 7")
 
 
 if __name__ == '__main__':
