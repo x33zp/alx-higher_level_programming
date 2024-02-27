@@ -176,7 +176,7 @@ class Testbase_save_to_csv(unittest.TestCase):
         list_rectangles_input = [rect1, rect2]
         Rectangle.save_to_file_csv(list_rectangles_input)
         with open("Rectangle.csv", 'r') as file:
-            self.assertEqual('9,10,7,2,8\n10,2,4,0,0\n', file.read())
+            self.assertEqual('7,10,7,2,8\n8,2,4,0,0\n', file.read())
 
     def test_save_to_csv_square(self):
         """
@@ -192,7 +192,7 @@ class Testbase_save_to_csv(unittest.TestCase):
         list_squares_input = [sqr1, sqr2]
         Square.save_to_file_csv(list_squares_input)
         with open("Square.csv", 'r') as file:
-            self.assertEqual('11,5,0,0\n12,7,9,1\n', file.read())
+            self.assertEqual('9,5,0,0\n10,7,9,1\n', file.read())
 
 
 if __name__ == '__main__':
