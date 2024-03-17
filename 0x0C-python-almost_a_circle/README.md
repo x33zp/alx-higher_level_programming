@@ -1,1 +1,1 @@
-Solutions to the project's tasks
+Solutions to the Project's tasks
