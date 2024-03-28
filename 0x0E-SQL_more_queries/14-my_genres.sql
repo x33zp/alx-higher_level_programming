@@ -4,4 +4,5 @@ SELECT tg.name
     ON tg.id = tsg.genre_id
     INNER JOIN tv_shows AS ts
     ON ts.id = tsg.show_id
-    WHERE ts.title = 'Dexter'; 
+    WHERE ts.title = 'Dexter'
+    ORDER BY tg.name; 
