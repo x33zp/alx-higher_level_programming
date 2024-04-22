@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const { argv } = require('node:process');
 
-factorial = (n) => {
+function factorial (n) {
   return isNaN(n) || n === 0 ? 1 : n * factorial(n - 1);
 }
 
