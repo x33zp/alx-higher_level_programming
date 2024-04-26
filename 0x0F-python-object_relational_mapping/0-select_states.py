@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This script connects to a MySQL database and fetches all rows
+from the 'states' table, then prints the rows sorted by the 'id'
+column in ascending order.
+"""
 import MySQLdb
 import sys
 
