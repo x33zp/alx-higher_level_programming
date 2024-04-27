@@ -9,6 +9,9 @@ from sqlalchemy import Column, Integer, String
 
 
 class City(Base):
+    """
+    City class
+    """
     __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True)
