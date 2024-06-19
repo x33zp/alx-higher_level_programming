@@ -1,11 +1,10 @@
 #!/usr/bin/node
 const args = process.argv.slice(2);
-let sortedArgs;
+let secondBiggestInt = 0;
 
-if (args === undefined || args.length < 2) {
-  console.log(0);
-} else {
-  sortedArgs = args.sort();
+if (args && args.length > 1) {
+  sortedArr = args.sort((a, b) => (b - a));
+  secondBiggestInt = sortedArr[1];
 }
 
-console.log(sortedArgs[sortedArgs.length - 2]);
+console.log(secondBiggestInt);
