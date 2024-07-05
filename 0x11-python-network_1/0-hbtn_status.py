@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" a py script ithat fetches a url """
-
+"""a py script that fetches a url"""
 import urllib.request
+
 
 if __name__ == "__main__":
     req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
