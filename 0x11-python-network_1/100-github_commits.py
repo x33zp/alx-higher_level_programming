@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""
+"""gets github repo commit info
 """
 import requests
 import sys
 
 if __name__ == '__main__':
-    owner = sys.argv[2]
     repo = sys.argv[1]
+    owner = sys.argv[2]
     r = requests.get('https://api.github.com/repos/{}/{}/commits'
                      .format(owner, repo))
 
