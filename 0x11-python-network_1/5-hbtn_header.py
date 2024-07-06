@@ -2,8 +2,8 @@
 """fetches a url and displays the value of 'X-Request-Id' variable in the header
 """
 import requests
-from sys import argv
+import sys
 
-r = requests.get(argv[1])
+r = requests.get(sys.argv[1])
 
 print(r.headers.get('X-Request-Id'))
