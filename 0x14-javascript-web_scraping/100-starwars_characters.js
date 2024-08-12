@@ -17,6 +17,6 @@ request(url, (error, response, body) => {
           console.log(JSON.parse(body).name);
         }
       });
-     });
-    }
+    });
+  }
 });
